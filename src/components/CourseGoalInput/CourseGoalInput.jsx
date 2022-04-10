@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from '../UI/Button';
 import './CourseGoalInput.css';
 
 const CourseGoalInput = (props) => {
@@ -20,7 +21,7 @@ const CourseGoalInput = (props) => {
         <label>Course Goal</label>
         <input type="text" value={enteredValue} onChange={goalInputHandler} />
       </div>
-      <button type="submit">Add Goal</button>
+      <Button type="submit">Add Goal</Button>
     </form>
   );
 };

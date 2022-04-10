@@ -19,12 +19,22 @@ const App = () => {
     });
   };
 
+  const deleteGoalHandler = (deletedGoal) => {
+    setGoals((prevGoals) => {
+      const updatedGoals = prevGoals.filter((goal) => goal.id !== deletedGoal);
+      console.log(updatedGoals);
+      return updatedGoals;
+    });
+  };
+
   let content = (
     <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
   );
 
   if (goals.length > 0) {
-    content = <CourseGoalList goalItems={goals} />;
+    content = (
+      <CourseGoalList goalItems={goals} onDeleteItem={deleteGoalHandler} />
+    );
   }
 
   return (
